@@ -17,7 +17,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngCordovaOauth'])
     }
   });
 })
-.controller('TwitterCtrl', ['$scope','$cordovaOauth','$cordovaOauthUtility','$http', function ($scope,$cordovaOauth,$cordovaOauthUtility,$http) {
+.controller('TwitterCtrl', ['$scope','$cordovaOauth','$cordovaOauthUtility','$http','$ionicPlatform', function ($scope,$cordovaOauth,$cordovaOauthUtility,$http,$ionicPlatform) {
   $scope.twitterLogin = function(){
     console.log("twitterLogin function got called");
     $cordovaOauth.twitter("YOUR TWITTER APPID", "YOUR TWITTER APP SECRET").then(function(result) {
@@ -61,45 +61,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngCordovaOauth'])
 
 
 
-  // $scope.twitterLogin = function() {
-  //   console.log("twitterLogin function got called");
-  //   $ionicLoading.show({templateUrl: 'templates/spinner.html'});
-  //   Twitter.login().then(
-  //      function(user){
-  //       Session.updateUserDetail(user).then(function(){
-  //         console.log("RESPONSE FROM SERVER DB");
-  //         console.log(user);
-  //         $ionicLoading.hide();
-  //         $location.url('/tab/dash');
-  //       }, function(err){
-  //         $ionicLoading.hide();
-  //         console.log("Failed to update user info..")
-  //         errorPopup.showPopup(err)
-  //       })
-  //     },
-  //     function(err){
-  //       $ionicLoading.hide();
-  //       console.log("Twitter LOGIN ERROR..");
-  //       errorPopup.showPopup(err);
-  //     }
-
-  //     )
-  // }
-
-
-
-
-
-// angular.module('sadhana.Services').factory('Twitter', ['$cordovaOauth', '$auth', '$http', 'errorPopup', 'serverUrl','$cordovaOauthUtility', function($cordovaOauth, $auth, $http, errorPopup, serverUrl,$cordovaOauthUtility){
-//   var self = this;
-//   self.login = function( ){
-//     var q = $auth.initDfd();
-//     console.log("q..");
-//     console.log(q);
-    
-//   return q.promise;
-//   }
-//   return self;
-
-// }]);
+  
 
